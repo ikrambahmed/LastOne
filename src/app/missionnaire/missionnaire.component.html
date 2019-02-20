@@ -1,0 +1,24 @@
+<div class="card-header bg-info text-white">
+  Ajouter un missionnaire
+</div>
+
+<div class="card-body">
+    <form [formGroup]="missionnaireForm">
+      <div class="form-group">
+        <label> cin </label>
+        <input type="text" class="form-control" formControlName="cin">
+      </div>
+      <div class="form-group">
+          <label> matricule </label>
+          <input type="text" class="form-control" formControlName="matricule">
+        </div>
+      <button class="btn btn-success" 
+      (click)="addMission()"
+      >Ajouter</button>
+      </form>
+</div>
+<div class="card-footer">
+
+</div>
+
+

@@ -1,0 +1,31 @@
+<h3>liste des missionnaires </h3>
+<div class="container">
+  <div class = "row">
+    <div class="col-lg-7">
+       <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>cin</th> <th>matricule </th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let missionnaire of missionnaires">
+             <td>{{missionnaire.cin}} </td><td>{{missionnaire.matricule}}</td>
+              <td>
+                <button class="btn btn-outline-primary">edit</button>
+                <button class="btn btn-outline-danger">remove</button>
+
+              </td>
+            </tr>
+          </tbody>
+       </table>
+    </div>
+    <div class="col-lg-5"> 
+      form  
+      <app-missionnaire></app-missionnaire>
+    </div>
+  </div>
+
+</div>
+  
