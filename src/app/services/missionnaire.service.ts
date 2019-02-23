@@ -10,9 +10,10 @@ import { grade } from '../models/grade';
 
 export class MissionnaireService {
   readonly Url='http://localhost:8080/missionaire' ;
-  readonly rootUrl='http://localhost:8080/listgrade' ; 
+  readonly rootUrL='http://localhost:8080/listgrade' ; 
+  readonly rootUrl='http://localhost:8080' ; 
+
   missionnaires : missionnaire[] ; 
-  grades : grade [] ; 
   constructor(private http : HttpClient){
 
   }
@@ -38,19 +39,23 @@ export class MissionnaireService {
    return this.http.delete(this.Url+ `/${cin}`) ; 
   }
   getGrade():Observable<any> 
-  { console.log('dkhalna lil grade') ; 
-    return this.http.get(this.rootUrl) ; 
+  { return this.http.get(this.rootUrL) ; 
   }
   
   getfonctions():Observable<any> 
-  {return this.http.get(this.rootUrl+'/listfonction/allfonction'); }
+  {return this.http.get(this.rootUrl+'/listfonction'); }
   getClasses():Observable<any> 
   {
-    return this.http.get(this.rootUrl+'/listclass/allclass') ; 
+    return this.http.get(this.rootUrl+'/listclass') ; 
   }
   getCategories():Observable<any> 
   {
-    return this.http.get(this.rootUrl+'listcategorie/allcat') ; 
+    return this.http.get(this.rootUrl+'/listcategorie') ; 
   }
+  getgroupes():Observable<any> 
+  {
+    return this.http.get(this.rootUrl+'/listgroupe') ; 
+  }
+
   
 }

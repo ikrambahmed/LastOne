@@ -3,6 +3,10 @@ import { MissionnaireService } from '../services/missionnaire.service';
 import { missionnaire } from '../models/missionnaire';
 import { FormGroup, FormArray, FormBuilder,Validators,ReactiveFormsModule  } from '@angular/forms';
 import { grade } from '../models/grade';
+import { fonction } from '../models/fonction';
+import { categorie } from '../models/categorie';
+import { groupe } from '../models/groupe';
+import { classe } from '../models/classe';
 @Component({
   selector: 'app-missionnaire',
   templateUrl: './missionnaire.component.html',
@@ -11,6 +15,10 @@ import { grade } from '../models/grade';
 export class MissionnaireComponent implements OnInit {
   missionnaireForm :FormGroup ; 
   grades : grade [];
+  fonctions : fonction[] ; 
+  categories : categorie[] ; 
+  groupes : groupe[] ; 
+  classes : classe[] ; 
   
 @Input ()
 operation ; 
@@ -29,11 +37,40 @@ butonMsg ;
     error => {console.log(error); } , 
     () => {console.log('loading grades was done ')}
   )}
-  ngOnInit() {
-    this.loadgrade() ; 
+  loadfonction()
+  {this.missionnaireService.getfonctions().subscribe(
+    data => { this.fonctions=data;},
+    error => {console.log(error); } , 
+    () => {console.log('loading grades was done ')}
+  )}
+  loadclasse()
+  {this.missionnaireService.getClasses().subscribe(
+    data => { this.classes=data;},
+    error => {console.log(error); } , 
+    () => {console.log('loading grades was done ')}
+  )}
+  loadcateg()
+  {this.missionnaireService.getCategories().subscribe(
+    data => { this.categories=data;},
+    error => {console.log(error); } , 
+    () => {console.log('loading grades was done ')}
+  )}
 
-  }
- 
+  loadgroupe()
+  {this.missionnaireService.getgroupes().subscribe(
+    data => { this.groupes=data;},
+    error => {console.log(error); } , 
+    () => {console.log('loading grades was done ')}
+  )}
+
+  ngOnInit() {
+    this.loadgrade(); 
+    this.loadcateg(); 
+    this.loadclasse(); 
+    this.loadgroupe(); 
+    this.loadclasse(); 
+}
+
   createForm()
   {
     this.missionnaireForm = this.fb.group({
@@ -62,9 +99,7 @@ butonMsg ;
       this.operation='' ; 
 
     }
-  )
-
-  } 
+  )} 
   remove()
   {
   this.missionnaireService.deleteMissionnaire(this.selectedMissionnaire.cin).subscribe(
@@ -75,9 +110,7 @@ butonMsg ;
       this.operation='' ; 
     }
     
-  )
-
-  }
+  )}
 
   add(){
     const m = this.missionnaireForm.value ;
@@ -90,6 +123,7 @@ butonMsg ;
       }
     )
   }
+
   initMiss()
   {
     this.selectedMissionnaire= new missionnaire() ; 

@@ -15,7 +15,6 @@ import { ListeMissionnaireComponent } from './liste-missionnaire/liste-missionna
 import { ListeMissionnaireService } from './services/liste-missionnaire.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContentComponent } from './content/content.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -28,7 +27,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     ListeMissionnaireComponent,
     NavbarComponent,
     ContentComponent,
-    SidebarComponent],
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule , 

@@ -7,13 +7,9 @@
           <thead>
             <tr>
               <th>ب.ت </th> <th>المعرف الوحيد </th>
-              <th>اللقب</th> <th>Nom FR</th>
-              <th>الاسم</th> <th>Prenom FR</th>
-              <th>الجنسية</th> <th>nationalite FR</th>
-              <th>تاريخ ب.ت</th>
-              <th>مكانها</th>
-             
-             
+              <th>الاسم</th> 
+              <th>اللقب</th> 
+              <th>الجنسية</th>      
               <th>
                 <button class="btn btn-outline-primary" (click)="operation ='ADD' ;initMiss() ;" >اظافة</button>
               </th>
@@ -22,11 +18,9 @@
           <tbody>
             <tr *ngFor="let missionnaire of missionnaires">
              <td>{{missionnaire.cin}} </td><td>{{missionnaire.matricule}}</td>
-             <td>{{missionnaire.nom}} </td><td>{{missionnaire.nomL}}</td>
-             <td>{{missionnaire.prenom}} </td><td>{{missionnaire.prenomL}}</td>
-             <td>{{missionnaire.nationalite}} </td><td>{{missionnaire.nationaliteL}}</td>
-               <td>{{missionnaire.date_cin}}</td>
-               <td>{{missionnaire.place_cin}}</td>
+             <td>{{missionnaire.prenom}}</td>
+             <td>{{missionnaire.nom}} </td>
+             <td>{{missionnaire.nationalite}} </td>
               <td>
                 <button class="btn btn-outline-primary" (click)="editOp() ;  selectedMissionnaire = missionnaire">تغيير</button>
                 <button class="btn btn-outline-danger" (click)="removeOp() ; selectedMissionnaire = missionnaire">حذف</button>

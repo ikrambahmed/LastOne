@@ -63,10 +63,9 @@
              
               <div class="form-group col-md-6">
                   <label>الوظيفة</label>
-                  <select>
-                    <option >option 1 </option>
-                  <option >option 2 </option>
-                </select>
+                  <select id="grade" name="grade">
+                    <option *ngFor="let fonction of fonctions" [value]="grade.code">{{grade.liba}}</option>
+                  </select>
               </div>
               <div class="form-group col-md-6">
                   <label> الرتبة </label>
@@ -76,18 +75,10 @@
 
               </div>
               <div class="form-group col-md-6">
-                  <label> مستوى التاجير</label>
-                  <select>
-                  <option >option 1 </option>
-                  <option >option 2 </option>
-                </select>
-              </div>
-              <div class="form-group col-md-6">
-                  <label> السلك  </label>
-                  <select>
-                  <option >option 1 </option>
-                  <option >option 2 </option>
-                </select>
+                  <label>صنف</label>
+                  <select id="grade" name="grade">
+                    <option *ngFor="let categorie of categories" [value]="grade.code">{{grade.liba}}</option>
+                  </select>
               </div>
       <button class="btn btn-success" 
       (click)="operation == 'ADD' ? add() : operation=='EDIT'? update() : operation=='REMOVE'? remove() : '' ">
