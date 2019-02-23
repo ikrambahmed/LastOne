@@ -1,20 +1,98 @@
-<div class="card-header bg-info text-white">
-  Ajouter un missionnaire
+<div *ngIf="operation == 'ADD' || operation =='EDIT' || operation =='REMOVE'">
+<div class="card-header bg-info text-white" >
+  <div class="card-header bg-info text-white" >
+    {{operation == 'ADD' ? 'ادخال' :
+      operation == 'EDIT' ? 'تغيير' :
+      operation == 'REMOVE' ? 'جذف' : ''}}
+منتفع
+</div>
 </div>
 
 <div class="card-body">
     <form [formGroup]="missionnaireForm">
-      <div class="form-group">
-        <label> cin </label>
-        <input type="text" class="form-control" formControlName="cin">
+      <div class="form-group col-md-6">
+        <label> ب.ت </label>
+        <input type="text" class="form-control" formControlName="cin" 
+        [(ngModel)]="selectedMissionnaire.cin">
       </div>
-      <div class="form-group">
-          <label> matricule </label>
-          <input type="text" class="form-control" formControlName="matricule">
+      <div class="form-group col-md-6">
+          <label> المعرف الوحيد </label>
+          <input type="text" class="form-control" formControlName="matricule"
+          [(ngModel)]="selectedMissionnaire.matricule">
         </div>
+        <div class="form-group col-md-6">
+          <label> Nom FR </label>
+          <input type="text" class="form-control" formControlName="nomL"
+          [(ngModel)]="selectedMissionnaire.nomL">
+        </div>
+        <div class="form-group col-md-6">
+            <label>اللقب  </label>
+            <input type="text" class="form-control" formControlName="nom"
+            [(ngModel)]="selectedMissionnaire.nom">
+          </div>
+          <div class="form-group col-md-6">
+            <label> Prenom FR </label>
+            <input type="text" class="form-control" formControlName="prenomL"
+            [(ngModel)]="selectedMissionnaire.prenomL">
+          </div>
+          <div class="form-group col-md-6">
+              <label>الاسم</label>
+              <input type="text" class="form-control" formControlName="prenom"
+              [(ngModel)]="selectedMissionnaire.prenom">
+            </div>
+            <div class="form-group col-md-6">
+              <label>nationalite FR</label>
+              <input type="text" class="form-control" formControlName="nationaliteL"
+              [(ngModel)]="selectedMissionnaire.nationaliteL">
+            </div>
+            <div class="form-group col-md-6">
+                <label>الجنسية</label>
+                <input type="text" class="form-control" formControlName="nationalite"
+                [(ngModel)]="selectedMissionnaire.nationalite">
+              </div>
+              <div class="form-group col-md-6">
+                <label>مكانها</label>
+                <input type="text" class="form-control" formControlName="place_cin"
+                [(ngModel)]="selectedMissionnaire.place_cin">
+              </div>
+              <div class="form-group col-md-6">
+                <label>تاريخ ب.ت</label>
+                <input type="text" class="form-control" formControlName="date_cin"
+                [(ngModel)]="selectedMissionnaire.date_cin">
+              </div>
+             
+              <div class="form-group col-md-6">
+                  <label>الوظيفة</label>
+                  <select>
+                    <option >option 1 </option>
+                  <option >option 2 </option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                  <label> الرتبة </label>
+                  <select id="grade" name="grade">
+                    <option *ngFor="let grade of grades" [value]="grade.code">{{grade.liba}}</option>
+                  </select>
+
+              </div>
+              <div class="form-group col-md-6">
+                  <label> مستوى التاجير</label>
+                  <select>
+                  <option >option 1 </option>
+                  <option >option 2 </option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                  <label> السلك  </label>
+                  <select>
+                  <option >option 1 </option>
+                  <option >option 2 </option>
+                </select>
+              </div>
       <button class="btn btn-success" 
-      (click)="addMission()"
-      >Ajouter</button>
+      (click)="operation == 'ADD' ? add() : operation=='EDIT'? update() : operation=='REMOVE'? remove() : '' ">
+                {{ operation == 'ADD' ? 'اظافة' : operation == 'EDIT' ? 'تغيير':operation == 'REMOVE' ? 'حذف' : ''}}
+                </button>
       </form>
 </div>
 <div class="card-footer">
@@ -22,3 +100,4 @@
 </div>
 
 
+</div>
