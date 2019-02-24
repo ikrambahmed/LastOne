@@ -10,6 +10,8 @@ import { MissionnaireService } from '../services/missionnaire.service';
 
 export class ListeMissionnaireComponent implements OnInit {
   missionnaires: missionnaire[] ;
+  searchText;
+
   @Input() msg ;
   constructor(private missionnaireService : MissionnaireService) { }
 

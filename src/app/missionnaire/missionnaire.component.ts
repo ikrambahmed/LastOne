@@ -14,6 +14,7 @@ import { classe } from '../models/classe';
 })
 export class MissionnaireComponent implements OnInit {
   missionnaireForm :FormGroup ; 
+  searchText ; 
   grades : grade [];
   fonctions : fonction[] ; 
   categories : categorie[] ; 
@@ -38,29 +39,31 @@ butonMsg ;
     () => {console.log('loading grades was done ')}
   )}
   loadfonction()
-  {this.missionnaireService.getfonctions().subscribe(
+  {
+    
+    this.missionnaireService.getfonctions().subscribe(
     data => { this.fonctions=data;},
     error => {console.log(error); } , 
-    () => {console.log('loading grades was done ')}
+    () => {console.log('loading fonctions was done ')}
   )}
   loadclasse()
   {this.missionnaireService.getClasses().subscribe(
     data => { this.classes=data;},
     error => {console.log(error); } , 
-    () => {console.log('loading grades was done ')}
+    () => {console.log('loading classes was done ')}
   )}
   loadcateg()
   {this.missionnaireService.getCategories().subscribe(
     data => { this.categories=data;},
     error => {console.log(error); } , 
-    () => {console.log('loading grades was done ')}
+    () => {console.log('loading categories was done ')}
   )}
 
   loadgroupe()
   {this.missionnaireService.getgroupes().subscribe(
     data => { this.groupes=data;},
     error => {console.log(error); } , 
-    () => {console.log('loading grades was done ')}
+    () => {console.log('loading groupes was done ')}
   )}
 
   ngOnInit() {
@@ -69,6 +72,7 @@ butonMsg ;
     this.loadclasse(); 
     this.loadgroupe(); 
     this.loadclasse(); 
+    this.loadfonction() ;
 }
 
   createForm()

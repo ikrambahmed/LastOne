@@ -12,7 +12,7 @@ export class MissionnaireService {
   readonly Url='http://localhost:8080/missionaire' ;
   readonly rootUrL='http://localhost:8080/listgrade' ; 
   readonly rootUrl='http://localhost:8080' ; 
-
+grades : grade[] ; 
   missionnaires : missionnaire[] ; 
   constructor(private http : HttpClient){
 
@@ -43,10 +43,12 @@ export class MissionnaireService {
   }
   
   getfonctions():Observable<any> 
-  {return this.http.get(this.rootUrl+'/listfonction'); }
+  {console.log('dkhalna lil fonctions')
+    return this.http.get('http://localhost:8080/listfonction'); }
+  
   getClasses():Observable<any> 
   {
-    return this.http.get(this.rootUrl+'/listclass') ; 
+    return this.http.get('http://localhost:8080/listclasse') ; 
   }
   getCategories():Observable<any> 
   {

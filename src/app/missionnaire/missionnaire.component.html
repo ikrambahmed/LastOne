@@ -1,3 +1,14 @@
+<html>
+  <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+<link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"> 
+</head>
+  <body>
+
+  
 <div *ngIf="operation == 'ADD' || operation =='EDIT' || operation =='REMOVE'">
 <div class="card-header bg-info text-white" >
   <div class="card-header bg-info text-white" >
@@ -9,81 +20,112 @@
 </div>
 
 <div class="card-body">
-    <form [formGroup]="missionnaireForm">
-      <div class="form-group col-md-6">
-        <label> ب.ت </label>
-        <input type="text" class="form-control" formControlName="cin" 
+    <form [formGroup]="missionnaireForm" #f="ngForm">
+      <div class="form-group col-md-4">
+        <label> مكانها </label>
+        <input type="text" class="form-control" formControlName="place_cin" 
+        [(ngModel)]="selectedMissionnaire.place_cin" ngModel required>
+      </div>
+      <div class="form-group col-md-4">
+        <label> المسلمة يوم </label>
+        <input type="date" class="form-control" formControlName="date_cin" 
+        [(ngModel)]="selectedMissionnaire.date_cin">
+      </div>
+     
+      <div class="form-group col-md-4">
+        <label> الهوية الوطنية </label>
+        <input type="text" class="form-control" formControlName="cin" pattern="[0-7]{8}"
         [(ngModel)]="selectedMissionnaire.cin">
       </div>
-      <div class="form-group col-md-6">
+     
+        <div class="form-group col-md-6">
+          <label> تاريخ الولادة </label>
+          <input type="date" class="form-control" formControlName="datenaissance" 
+          [(ngModel)]="selectedMissionnaire.datenaissance">
+        </div>
+        <div class="form-group col-md-6">
           <label> المعرف الوحيد </label>
-          <input type="text" class="form-control" formControlName="matricule"
+          <input type="text" class="form-control" formControlName="matricule" 
           [(ngModel)]="selectedMissionnaire.matricule">
         </div>
         <div class="form-group col-md-6">
+          <label> Prenom FR </label>
+          <input type="text" class="form-control" formControlName="prenomL"
+          [(ngModel)]="selectedMissionnaire.prenomL">
+        </div>
+        <div class="form-group col-md-6">
+            <label>الاسم</label>
+            <input type="text" class="form-control" formControlName="prenom" 
+            [(ngModel)]="selectedMissionnaire.prenom">
+          </div>
+        <div class="form-group col-md-6">
           <label> Nom FR </label>
-          <input type="text" class="form-control" formControlName="nomL"
+          <input type="text" class="form-control" formControlName="nomL" 
           [(ngModel)]="selectedMissionnaire.nomL">
         </div>
         <div class="form-group col-md-6">
-            <label>اللقب  </label>
-            <input type="text" class="form-control" formControlName="nom"
-            [(ngModel)]="selectedMissionnaire.nom">
-          </div>
-          <div class="form-group col-md-6">
-            <label> Prenom FR </label>
-            <input type="text" class="form-control" formControlName="prenomL"
-            [(ngModel)]="selectedMissionnaire.prenomL">
-          </div>
-          <div class="form-group col-md-6">
-              <label>الاسم</label>
-              <input type="text" class="form-control" formControlName="prenom"
-              [(ngModel)]="selectedMissionnaire.prenom">
-            </div>
+          <label>اللقب  </label>
+          <input type="text" class="form-control" formControlName="nom" 
+          [(ngModel)]="selectedMissionnaire.nom">
+        </div>
             <div class="form-group col-md-6">
               <label>nationalite FR</label>
-              <input type="text" class="form-control" formControlName="nationaliteL"
+              <input type="text" class="form-control" formControlName="nationaliteL"  
               [(ngModel)]="selectedMissionnaire.nationaliteL">
             </div>
             <div class="form-group col-md-6">
                 <label>الجنسية</label>
-                <input type="text" class="form-control" formControlName="nationalite"
+                <input type="text" class="form-control" formControlName="nationalite"  
                 [(ngModel)]="selectedMissionnaire.nationalite">
               </div>
               <div class="form-group col-md-6">
-                <label>مكانها</label>
-                <input type="text" class="form-control" formControlName="place_cin"
-                [(ngModel)]="selectedMissionnaire.place_cin">
+                <label>مستوى التاجير</label>
+                <input type="text" class="form-control" formControlName="niveau"  
+                [(ngModel)]="selectedMissionnaire.niveau">
               </div>
               <div class="form-group col-md-6">
-                <label>تاريخ ب.ت</label>
-                <input type="text" class="form-control" formControlName="date_cin"
-                [(ngModel)]="selectedMissionnaire.date_cin">
+                <label>المؤسسة</label>
+                <input type="text" class="form-control" formControlName="ministr"  
+                [(ngModel)]="selectedMissionnaire.ministr">
               </div>
              
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-3">
                   <label>الوظيفة</label>
-                  <select id="grade" name="grade">
-                    <option *ngFor="let fonction of fonctions" [value]="grade.code">{{grade.liba}}</option>
-                  </select>
+                  <input type = "text" id="search1" name="search1" list="list1">
+                  <datalist id="list1">
+                    <option *ngFor="let fonction of fonctions" [value]="fonction.code">
+                  </datalist>
               </div>
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-3">
+                <label>سلك</label>
+                <input type = "text" id="search2" name="search2" list="list2">
+                <datalist id="list2">
+                  <option *ngFor="let classe of classes" [value]="classe.liba">
+                </datalist>
+            </div>
+              <div class="form-group col-md-3">
                   <label> الرتبة </label>
-                  <select id="grade" name="grade">
-                    <option *ngFor="let grade of grades" [value]="grade.code">{{grade.liba}}</option>
-                  </select>
+                  <input type = "text" id="search3" name="search3" list="list3">
+                  <datalist id="list3">
+                    <option *ngFor="let grade of grades" [value]="grade.liba">
+                  </datalist>
 
               </div>
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-3">
                   <label>صنف</label>
-                  <select id="grade" name="grade">
-                    <option *ngFor="let categorie of categories" [value]="grade.code">{{grade.liba}}</option>
-                  </select>
-              </div>
-      <button class="btn btn-success" 
-      (click)="operation == 'ADD' ? add() : operation=='EDIT'? update() : operation=='REMOVE'? remove() : '' ">
+                  <input type = "text" id="search4" name="search4" list="list4">
+                  <datalist id="list4">
+                    <option *ngFor="let categorie of categories" [value]="categorie.liba">
+                  </datalist>
+                </div>
+
+           
+              <div>
+              <button class="btn btn-success"  [disabled]="f.invalid"
+              (click)="operation == 'ADD' ? add() : operation=='EDIT'? update() : operation=='REMOVE'? remove() : '' ">
                 {{ operation == 'ADD' ? 'اظافة' : operation == 'EDIT' ? 'تغيير':operation == 'REMOVE' ? 'حذف' : ''}}
                 </button>
+              </div>
       </form>
 </div>
 <div class="card-footer">
@@ -92,3 +134,5 @@
 
 
 </div>
+</body>
+</html>
