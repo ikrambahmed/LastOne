@@ -1,6 +1,8 @@
 <div class="row body">
     <div class="col-lg-10">
-      <button (click)="showHideSideBar =! showHideSideBar ; ">show/hide</button>
+      <div class="pull-right">
+      <button class="btn btn-outline-warning btn-sm"(click)="logout()">log out </button>
+    </div>
       <app-navbar></app-navbar>
       <app-content></app-content>
     </div>

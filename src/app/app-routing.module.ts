@@ -5,13 +5,15 @@ import { HomeComponent } from './home/home.component';
 import { ChangePassComponent } from './change-pass/change-pass.component';
 import { MissionnaireComponent } from './missionnaire/missionnaire.component';
 import { ListeMissionnaireComponent } from './liste-missionnaire/liste-missionnaire.component';
+import { Login1Component } from './login1/login1.component';
 
 const routes: Routes = [
+  {path : '' , redirectTo :'/home' , pathMatch:'full'},
   {path :'login' , component : LoginComponent} , 
-  {path:'home' , component: HomeComponent} , 
+  {path:'home' , component: HomeComponent },
   {path:'change', component: ChangePassComponent},
   {path:'missionnaire' , component:MissionnaireComponent},
-  {path:'liste-m',component:ListeMissionnaireComponent}
+  {path:'login1', component: Login1Component}
 ];
 
 @NgModule({

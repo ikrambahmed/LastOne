@@ -17,6 +17,12 @@ import { ListeMissionnaireService } from './services/liste-missionnaire.service'
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContentComponent } from './content/content.component';
 import { FilterPipe }from './filter.pipe';
+import { Login1Component } from './login1/login1.component';
+import { AppService } from './app.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
+import { XHrInterceptor } from './xhr.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +33,7 @@ import { FilterPipe }from './filter.pipe';
     ListeMissionnaireComponent,
     NavbarComponent,
     ContentComponent,
+    Login1Component,
    ],
   imports: [
     Ng2SearchPipeModule,
@@ -34,10 +41,11 @@ import { FilterPipe }from './filter.pipe';
     AppRoutingModule , 
     FormsModule , 
     ReactiveFormsModule , 
-    HttpClientModule , 
+    HttpClientModule 
   
   ],
-  providers: [AuthService,MissionnaireService,ListeMissionnaireService],
+  providers: [AuthService,MissionnaireService,ListeMissionnaireService, AppService, CookieService,
+  {provide :HTTP_INTERCEPTORS, useClass :XHrInterceptor , multi : true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

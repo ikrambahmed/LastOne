@@ -1,5 +1,6 @@
-<html>
+<html >
   <head>
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -19,9 +20,9 @@
 </div>
 </div>
 
-<div class="card-body">
+<div class="card-body"  >
     <form [formGroup]="missionnaireForm" #f="ngForm">
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-4" >
         <label> مكانها </label>
         <input type="text" class="form-control" formControlName="place_cin" 
         [(ngModel)]="selectedMissionnaire.place_cin" ngModel required>
@@ -49,7 +50,7 @@
           [(ngModel)]="selectedMissionnaire.matricule">
         </div>
         <div class="form-group col-md-6">
-          <label> Prenom FR </label>
+          <label> Prenom </label>
           <input type="text" class="form-control" formControlName="prenomL"
           [(ngModel)]="selectedMissionnaire.prenomL">
         </div>
@@ -59,7 +60,7 @@
             [(ngModel)]="selectedMissionnaire.prenom">
           </div>
         <div class="form-group col-md-6">
-          <label> Nom FR </label>
+          <label> Nom </label>
           <input type="text" class="form-control" formControlName="nomL" 
           [(ngModel)]="selectedMissionnaire.nomL">
         </div>
@@ -69,7 +70,7 @@
           [(ngModel)]="selectedMissionnaire.nom">
         </div>
             <div class="form-group col-md-6">
-              <label>nationalite FR</label>
+              <label>nationalite </label>
               <input type="text" class="form-control" formControlName="nationaliteL"  
               [(ngModel)]="selectedMissionnaire.nationaliteL">
             </div>
@@ -89,31 +90,31 @@
                 [(ngModel)]="selectedMissionnaire.ministr">
               </div>
              
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-6">
                   <label>الوظيفة</label>
-                  <input type = "text" id="search1" name="search1" list="list1">
+                  <input type = "text" class = "form-control" id="search1" name="search1" list="list1">
                   <datalist id="list1">
                     <option *ngFor="let fonction of fonctions" [value]="fonction.code">
                   </datalist>
               </div>
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-6">
                 <label>سلك</label>
-                <input type = "text" id="search2" name="search2" list="list2">
+                <input type = "text" class="form-control" id="search2" name="search2" list="list2">
                 <datalist id="list2">
                   <option *ngFor="let classe of classes" [value]="classe.liba">
                 </datalist>
             </div>
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-6">
                   <label> الرتبة </label>
-                  <input type = "text" id="search3" name="search3" list="list3">
+                  <input type = "text" class="form-control" id="search3" name="search3" list="list3">
                   <datalist id="list3">
                     <option *ngFor="let grade of grades" [value]="grade.liba">
                   </datalist>
 
               </div>
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-6">
                   <label>صنف</label>
-                  <input type = "text" id="search4" name="search4" list="list4">
+                  <input type = "text" class="form-control" id="search4" name="search4" list="list4">
                   <datalist id="list4">
                     <option *ngFor="let categorie of categories" [value]="categorie.liba">
                   </datalist>

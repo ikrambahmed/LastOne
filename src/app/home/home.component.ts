@@ -13,5 +13,7 @@ export class HomeComponent implements OnInit {
   onShowSideBarChange(showHideSideBar){
     this.showHideSideBar = showHideSideBar;
   }
+  logout(){
+  }
 
 }
