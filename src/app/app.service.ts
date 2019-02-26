@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 
 @Injectable()
 export class AppService {
-
+  response ; 
   authenticated: boolean = false;
 
   constructor(private http: HttpClient,
@@ -20,6 +20,7 @@ export class AppService {
       this.http.get('http://localhost:8080/api/user').subscribe(response => {
           if (response && response['name']) {
             console.log(response);
+            this.response= response ; 
               this.authenticated = true;
             
           } else {

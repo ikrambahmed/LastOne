@@ -13,7 +13,7 @@ export class Login1Component implements OnInit {
 
   credentials = {
     username: '',
-    password: ''
+    password: '123'
   };
   constructor(private fb: FormBuilder,
     private appService: AppService,
@@ -32,6 +32,7 @@ login(){
     console.log('login lekbira') ; 
     this.router.navigateByUrl('/home');
   });
+ /*this.router.navigateByUrl('/home') ;*/
 }
 
 

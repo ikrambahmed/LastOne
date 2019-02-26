@@ -6,6 +6,7 @@ import { ChangePassComponent } from './change-pass/change-pass.component';
 import { MissionnaireComponent } from './missionnaire/missionnaire.component';
 import { ListeMissionnaireComponent } from './liste-missionnaire/liste-missionnaire.component';
 import { Login1Component } from './login1/login1.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {path : '' , redirectTo :'/home' , pathMatch:'full'},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'home' , component: HomeComponent },
   {path:'change', component: ChangePassComponent},
   {path:'missionnaire' , component:MissionnaireComponent},
-  {path:'login1', component: Login1Component}
+  {path:'login1', component:Login1Component},
+  {path : 'users' , component : UserComponent}
 ];
 
 @NgModule({

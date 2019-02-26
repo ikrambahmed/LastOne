@@ -16,12 +16,12 @@ import { ListeMissionnaireComponent } from './liste-missionnaire/liste-missionna
 import { ListeMissionnaireService } from './services/liste-missionnaire.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContentComponent } from './content/content.component';
-import { FilterPipe }from './filter.pipe';
 import { Login1Component } from './login1/login1.component';
 import { AppService } from './app.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { XHrInterceptor } from './xhr.interceptor';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { XHrInterceptor } from './xhr.interceptor';
     NavbarComponent,
     ContentComponent,
     Login1Component,
+    UserComponent,
    ],
   imports: [
     Ng2SearchPipeModule,
