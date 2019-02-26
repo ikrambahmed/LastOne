@@ -13,7 +13,7 @@ export class Login1Component implements OnInit {
 
   credentials = {
     username: '',
-    password: '123'
+    password: ''
   };
   constructor(private fb: FormBuilder,
     private appService: AppService,
