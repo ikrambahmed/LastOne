@@ -17,7 +17,8 @@ const routes: Routes = [
   {path:'missionnaire' , component:MissionnaireComponent},
   {path:'login1', component:Login1Component},
   {path : 'users' , component : UserComponent},
-  {path:'mission', component:MissionComponent}
+  {path:'mission', component:MissionComponent},
+  {path : 'liste-m', component:ListeMissionnaireComponent}
 ];
 
 @NgModule({
