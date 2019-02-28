@@ -1,0 +1,147 @@
+h1 {
+    left: 50;
+    line-height: 200px;
+    margin: auto;
+    margin-top: -100px;
+    position: middle;
+    top: 50%;
+    width: 40%;
+   
+    font-weight: bold;
+   font:Arial;
+
+}
+.jumbotron{
+    position: relative;
+    
+}
+label[for=code]{
+    position: absolute;
+    right:10%;
+
+}
+input[type=textbox1]{
+    position: absolute;
+    right:20%;
+}
+input[type=textbox]{
+    position: absolute;
+    right:35%;
+}
+.panel{
+    position: relative;
+	padding-bottom: 10%;
+    background-color: rgb(232, 234, 236);
+    
+}
+
+
+input[list]
+{
+  margin-left:80;
+    
+
+  width: 60%;
+  left: 40%;
+    
+    background: rgb(255, 255, 255);
+    padding: 10px 10px 10px 10px;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: rgb(177, 174, 174);
+    
+    
+}
+label[for=MotClé] {
+    
+    position: absolute;
+	
+	margin-top: 20px;
+	top: 50;
+    right: 0;
+    left: 30;
+    
+  }
+  label[for=ObjetA] {
+    position: absolute;
+	
+	
+	top: 70;
+    right: 0;
+    left: 30;
+    margin-top: 20px;
+  }
+
+  label[for=ObjetF] {
+    position: absolute;
+	
+	padding-top: 20px;
+
+	top: 90;
+    right: 0;
+    left: 30;
+    margin-top: 20px;
+  }
+  textarea[for=objeetA]{
+      
+      width: 80%;
+      left: 30;
+      margin-top: 20px;
+      
+
+
+  }
+  textarea[for=objeetF]{
+    width: 80%;
+    left: 20;
+    margin-top: 20px;
+    
+}
+label[for=aller]{
+    position: absolute;
+	top: 120;
+    right: 10px;
+    margin-top: 20px;
+
+}
+
+input[button=submit]{
+    position: absolute;
+    right: 120px;
+    font-family: Impact,  'Arial Narrow Bold', sans-serif;
+}
+input[id=date2]{
+    position: absolute;
+	top: 120;
+    right:80px;
+    margin-top: 20px;
+    
+}
+label[for=retour]{
+    position: absolute;
+	top: 120;
+    right:260px;
+
+    margin-top: 20px;
+}
+input[id=date1]{
+    position: absolute;
+	top: 120;
+    right:340px;
+    margin-top: 20px;
+    
+}
+label[for=duree]{
+    position: absolute;
+	top: 120;
+    left:200px;
+    margin-top: 20px;
+
+}
+
+input[type=text]{
+   position : relative;
+    left: 20px;
+    margin-top: 20px;
+}
+
+     

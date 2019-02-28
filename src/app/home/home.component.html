@@ -1,9 +1,12 @@
 <div class="row body">
-    <div class="col-lg-10">
+    <div class="col-lg-10" >
       <div class="pull-right">
       <button class="btn btn-outline-warning btn-sm"(click)="logout()">log out </button>
     </div>
-      <app-navbar></app-navbar>
+    <!--*ngIf="hasRoleAdmin()" -->
+     <div > 
+       <app-navbar></app-navbar>
+      </div>
       <app-content></app-content>
     </div>
   </div>

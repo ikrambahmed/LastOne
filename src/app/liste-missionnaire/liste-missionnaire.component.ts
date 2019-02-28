@@ -25,8 +25,6 @@ export class ListeMissionnaireComponent implements OnInit {
   editOp()
   {
     this.operation='EDIT' ; 
-
-    
   }
   removeOp()
   {

@@ -20,12 +20,14 @@ export class MissionnaireComponent implements OnInit {
   categories : categorie[] ; 
   groupes : groupe[] ; 
   classes : classe[] ; 
+  public onegrade : any ; 
   
 @Input ()
 operation ; 
 @Input() 
 butonMsg ;
-@Input() selectedMissionnaire ; 
+@Input()
+ selectedMissionnaire ; 
 
 
   constructor(private fb : FormBuilder , private missionnaireService : MissionnaireService) { 
@@ -65,16 +67,6 @@ butonMsg ;
     error => {console.log(error); } , 
     () => {console.log('loading groupes was done ')}
   )}
-
-  ngOnInit() {
-    this.loadgrade(); 
-    this.loadcateg(); 
-    this.loadclasse(); 
-    this.loadgroupe(); 
-    this.loadclasse(); 
-    this.loadfonction() ;
-}
-
   createForm()
   {
     this.missionnaireForm = this.fb.group({
@@ -87,17 +79,38 @@ butonMsg ;
       nationalite: ['',Validators.required],
       nationaliteL : ['',Validators.required],
       datenaissance : ['',Validators.required],
+      place_naissance : ['',Validators.required],
       date_cin : ['',Validators.required],
       place_cin : ['',Validators.required],
       niveau  : ['',Validators.required],
       ministr: ['',Validators.required],
+      rib: ['',Validators.required] , 
+      groupe : ['',Validators.required],
+     // graade : ['',Validators.required],
+      //fonnction: ['',Validators.required],
+      //classee: ['',Validators.required],
+     // cat : ['',Validators.required],
+     // group: ['',Validators.required],
+     // dept: ['',Validators.required]
   });
   }
-  
+
+  ngOnInit() {
+
+    this.loadgrade(); 
+    this.loadcateg(); 
+    this.loadclasse(); 
+    this.loadgroupe(); 
+    this.loadclasse(); 
+    this.loadfonction() ;
+    
+}
+
   update() {
   this.missionnaireService.updateMissionnaire(this.selectedMissionnaire)
   .subscribe(
     res =>{
+
       this.initMiss() ; 
       this.missionnaireService.loadMissionaire() ; 
       this.operation='' ; 
@@ -117,9 +130,11 @@ butonMsg ;
   )}
 
   add(){
+    console.log('nzel aala add') ; 
     const m = this.missionnaireForm.value ;
     this.missionnaireService.addMissionnaire(m).subscribe(
       res => {
+        console.log('c bon lka res') ; 
         
         this.initMiss() ; 
         this.missionnaireService.loadMissionaire() ; 
@@ -129,11 +144,9 @@ butonMsg ;
   }
 
   initMiss()
-  {
+  { 
     this.selectedMissionnaire= new missionnaire() ; 
-    
-    this.createForm() ; 
+    this.createForm(); 
   }
-
 
 }

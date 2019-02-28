@@ -7,15 +7,17 @@ import { MissionnaireComponent } from './missionnaire/missionnaire.component';
 import { ListeMissionnaireComponent } from './liste-missionnaire/liste-missionnaire.component';
 import { Login1Component } from './login1/login1.component';
 import { UserComponent } from './user/user.component';
+import { MissionComponent } from './mission/mission.component';
 
 const routes: Routes = [
-  {path : '' , redirectTo :'/home' , pathMatch:'full'},
+ // {path : '' , redirectTo :'/home' , pathMatch:'full'},
   {path :'login' , component : LoginComponent} , 
   {path:'home' , component: HomeComponent },
   {path:'change', component: ChangePassComponent},
   {path:'missionnaire' , component:MissionnaireComponent},
   {path:'login1', component:Login1Component},
-  {path : 'users' , component : UserComponent}
+  {path : 'users' , component : UserComponent},
+  {path:'mission', component:MissionComponent}
 ];
 
 @NgModule({

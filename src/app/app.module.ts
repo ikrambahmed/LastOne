@@ -22,6 +22,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { XHrInterceptor } from './xhr.interceptor';
 import { UserComponent } from './user/user.component';
+import {StoreModule} from '@ngrx/store' ; 
+import {principalReducer} from './shared/principal.reducer';
+import { MissionComponent } from './mission/mission.component' ; 
+import { MissionService } from './services/mission.service';
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker' ;
 
 @NgModule({
   declarations: [
@@ -35,6 +40,7 @@ import { UserComponent } from './user/user.component';
     ContentComponent,
     Login1Component,
     UserComponent,
+    MissionComponent
    ],
   imports: [
     Ng2SearchPipeModule,
@@ -42,10 +48,12 @@ import { UserComponent } from './user/user.component';
     AppRoutingModule , 
     FormsModule , 
     ReactiveFormsModule , 
-    HttpClientModule 
+    HttpClientModule ,
+    StoreModule.forRoot({principal:principalReducer}),
+    
   
   ],
-  providers: [AuthService,MissionnaireService,ListeMissionnaireService, AppService, CookieService,
+  providers: [AuthService,MissionnaireService,ListeMissionnaireService,MissionService, AppService, CookieService,
   {provide :HTTP_INTERCEPTORS, useClass :XHrInterceptor , multi : true }],
   bootstrap: [AppComponent]
 })

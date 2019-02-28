@@ -1,0 +1,75 @@
+<div class="container">
+  
+  <form [formGroup]="missionForm" #f="ngForm">
+  
+  <div class="jumbotron ">
+      
+    
+    <h1 style="color:rgb(7, 72, 116);"  >إدخال مأمورية </h1>
+  
+
+    <div  >
+        <input type="textbox1" class="class-form" formControlName="code_mission">
+        <input type="textbox" class="class-form" >
+        <label for="code">رقم المأمورية</label>
+        </div>
+
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+
+     Le formulaire à remplir
+    </div>
+<div>
+    <label for="MotClé">محور المأمورية</label>
+      <input list="Mot Clé" id="motclé"  />
+      <datalist id="Mot Clé">
+      <option value="1">mot clé 1</option>
+      <option value="2">mot clé 2</option>
+      <option value="3">mot clé 3</option>
+      <option value="4">mot clé 4 </option>
+      
+      </datalist>
+</div>
+
+<div >
+    <label for="ObjetA"> Objet Arabe </label>
+  
+    <textarea for="objeetA" class ="class-form" formControlName="objetA">you are in the zone</textarea>
+  </div>
+
+  <div >
+      <label for="ObjetF"> Objet en Français </label>
+      <textarea for="objeetF" formControlName="objetF" class ="class-form">you are in the zone</textarea>
+    </div>
+
+
+    <div >
+        <input type="text"  class ="class-form" />
+        <label for="duree">المدة </label>
+      
+
+        <input type="date" id="date1"  class ="class-form" formControlName="date_fin"/>
+        <label for="retour">تاريخ الاياب </label>
+
+        <input type="date" id="date2"  class ="class-form" formControlName="date_debut"/>
+        <label for="aller">تاريخ الذهاب </label>
+        
+  </div> 
+
+  </div>
+
+  <div>
+      <input button="submit" (click)="add()" class="btn btn-dark" value="إدخال" style="border:2px solid rgb(46, 46, 46);" >
+      <input type="button" class="btn btn-info btn-danger" value="إلغاء" style="border:2px solid rgb(233, 54, 54);">
+     
+      
+    </div> 
+  </form>
+
+</div>

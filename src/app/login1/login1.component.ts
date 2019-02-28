@@ -15,6 +15,7 @@ export class Login1Component implements OnInit {
     username: '',
     password: ''
   };
+
   constructor(private fb: FormBuilder,
     private appService: AppService,
     private router: Router) { }
@@ -26,13 +27,12 @@ password: ['', Validators.compose([Validators.required, Validators.minLength(3)]
 });
 }
 
-
 login(){
-  this.appService.authenticate(this.credentials, ()=>{
+ /* this.appService.authenticate(this.credentials, ()=>{
     console.log('login lekbira') ; 
     this.router.navigateByUrl('/home');
-  });
- /*this.router.navigateByUrl('/home') ;*/
+  });*/
+  this.router.navigateByUrl('/home') ;
 }
 
 
