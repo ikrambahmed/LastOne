@@ -14,6 +14,7 @@ export class MissionnaireService {
   readonly rootUrL='http://localhost:8080/api/listgrade' ; 
 
   readonly rootUrl='http://localhost:8080' ; 
+  readonly root = 'http://localhost:8080/api/missionaire/lista' ; 
   grades:grade[] ; 
   missionnaires : missionnaire[] ; 
   constructor(private http : HttpClient){
@@ -26,7 +27,7 @@ export class MissionnaireService {
   {this.getMissionares().subscribe(
     data => { this.missionnaires=data},
     error => {console.log(error) } , 
-    () => {console.log('loading missions was done ')}
+    () => {console.log('loading missionnaires was done ')}
   )}
   addMissionnaire( miss : missionnaire) : Observable<any>{
     console.log('fi west el service') ; 
@@ -64,5 +65,8 @@ export class MissionnaireService {
  {
   return this.http.get(this.rl+'/listegrade?name='+lib)
 }*/
-  
+
+getOneMiss(cin : String) : Observable<any>{
+  return this.http.get('http://localhost:8080/api/missionaire/lista?cin='+cin) ; 
+ }
 }

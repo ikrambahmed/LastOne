@@ -86,12 +86,12 @@ butonMsg ;
       ministr: ['',Validators.required],
       rib: ['',Validators.required] , 
       groupe : ['',Validators.required],
-     // graade : ['',Validators.required],
-      //fonnction: ['',Validators.required],
-      //classee: ['',Validators.required],
-     // cat : ['',Validators.required],
-     // group: ['',Validators.required],
-     // dept: ['',Validators.required]
+      graade : ['',Validators.required],
+      fonnction: ['',Validators.required],
+      classee: ['',Validators.required],
+      cat : ['',Validators.required],
+      //group: ['',Validators.required],
+      //dept: ['',Validators.required]
   });
   }
 
@@ -135,7 +135,6 @@ butonMsg ;
     this.missionnaireService.addMissionnaire(m).subscribe(
       res => {
         console.log('c bon lka res') ; 
-        
         this.initMiss() ; 
         this.missionnaireService.loadMissionaire() ; 
         this.operation='' ; 

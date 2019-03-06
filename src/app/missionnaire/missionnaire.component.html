@@ -22,83 +22,82 @@
 </div>
 
 <div class="card-body"  >
-    <form [formGroup]="missionnaireForm" #f="ngForm">
+    <form [formGroup]="missionnaireForm" #m="ngForm" >
       <div class="form-group col-md-4" >
         <label> مكانها </label>
         <input type="text" class="form-control" formControlName="place_cin" 
-        [(ngModel)]="selectedMissionnaire.place_cin" >
+        [(ngModel)]="selectedMissionnaire.place_cin" required>
       </div>
       <div class="form-group col-md-4">
         <label for="delivre"> المسلمة يوم </label>
-        <input type="date" class="form-control" formControlName="date_cin" 
-        
-        [(ngModel)]="selectedMissionnaire.date_cin">
+        <input type="date" class="form-control" formControlName="date_cin"      
+        [(ngModel)]="selectedMissionnaire.date_cin" required>
       </div>
      
       <div class="form-group col-md-4">
         <label for="cin"> الهوية الوطنية </label>
         <input type="text" class="form-control" formControlName="cin" 
-        placeholder="Tapez dans ce champ 8 chiffres" autofocus required pattern="(\d){8}" name="cin
-      "
-        [(ngModel)]="selectedMissionnaire.cin">
+        placeholder="Tapez dans ce champ 8 chiffres" autofocus pattern="[0-9]{8}" 
+        name="cin" [(ngModel)]="selectedMissionnaire.cin" maxlength="8" required>
       </div>
       <div class="form-group col-md-6">
         <label>مكانها</label>
         <input type="text" class="form-control" formControlName="place_naissance" 
-        [(ngModel)]="selectedMissionnaire.place_naissance">
+        [(ngModel)]="selectedMissionnaire.place_naissance" required>
       </div>
         <div class="form-group col-md-6">
           <label> تاريخ الولادة </label>
           <input type="date" class="form-control" formControlName="datenaissance" 
-          [(ngModel)]="selectedMissionnaire.datenaissance">
+          [(ngModel)]="selectedMissionnaire.datenaissance" required>
         </div>
         
         <div class="form-group col-md-6">
           <label> RIB </label>
           <input type="text" class="form-control" formControlName="rib" 
-          [(ngModel)]="selectedMissionnaire.rib">
+          [(ngModel)]="selectedMissionnaire.rib" required>
         </div>
 
         <div class="form-group col-md-6">
           <label> المعرف الوحيد </label>
           <input type="text" class="form-control" formControlName="matricule" 
-          [(ngModel)]="selectedMissionnaire.matricule">
+          [(ngModel)]="selectedMissionnaire.matricule" required>
         </div>
 
         <div class="form-group col-md-6">
           <label> Prenom </label>
           <input type="text" class="form-control" formControlName="prenomL"
-          [(ngModel)]="selectedMissionnaire.prenomL">
+          [(ngModel)]="selectedMissionnaire.prenomL" required>
         </div>
         <div class="form-group col-md-6">
             <label>الاسم</label>
             <input type="text" class="form-control" formControlName="prenom" 
-            [(ngModel)]="selectedMissionnaire.prenom">
+            [(ngModel)]="selectedMissionnaire.prenom" required>
           </div>
         <div class="form-group col-md-6">
           <label> Nom </label>
           <input type="text" class="form-control" formControlName="nomL" 
-          [(ngModel)]="selectedMissionnaire.nomL">
+          [(ngModel)]="selectedMissionnaire.nomL" required>
         </div>
         <div class="form-group col-md-6">
           <label>اللقب  </label>
           <input type="text" class="form-control" formControlName="nom" 
-          [(ngModel)]="selectedMissionnaire.nom">
+          [(ngModel)]="selectedMissionnaire.nom" required>
         </div>
             <div class="form-group col-md-6">
               <label>Nationalite </label>
               <input type="text" class="form-control" formControlName="nationaliteL"  
-              [(ngModel)]="selectedMissionnaire.nationaliteL">
+              [(ngModel)]="selectedMissionnaire.nationaliteL" required> 
             </div>
             <div class="form-group col-md-6">
                 <label>الجنسية</label>
                 <input type="text" class="form-control" formControlName="nationalite"  
-                [(ngModel)]="selectedMissionnaire.nationalite">
+                [(ngModel)]="selectedMissionnaire.nationalite" required>
               </div>
          
               <div class="form-group col-md-6">
                   <label> الرتبة </label>
-                  <input type = "text" class="form-control" id="search3" name="search3" list="list3" >
+                  <input type = "text" class="form-control" id="search3" name="search3" list="list3" required
+                  [(ngModel)]="selectedMissionnaire.graade">
                   <datalist id="list3">
                     <option *ngFor="let grade of grades" [value]="grade.liba" data-id="grade.code">
                   </datalist>
@@ -107,7 +106,7 @@
               <div class="form-group col-md-6">
                 <label>الوظيفة</label>
                 <input type = "text" class = "form-control" id="search1" name="search1" list="list1"
-               >
+                required [(ngModel)]="selectedMissionnaire.fonnction">
                 <datalist id="list1">
                   <option *ngFor="let fonction of fonctions" [value]="fonction.liba" data-id="fonction.code">
                 </datalist>
@@ -116,27 +115,27 @@
               <div class="form-group col-md-6">
                   <label>صنف</label>
                   <input type = "text" class="form-control" id="search4" name="search4" list="list4"
-                  >
+                  required  [(ngModel)]="selectedMissionnaire.cat">
                   <datalist id="list4">
-                    <option *ngFor="let categorie of categories" [value]="categorie.liba" data-id="categorie.code">
+                    <option *ngFor="let categorie of categories" [value]="categorie" data-id="categorie.code">
                   </datalist>
                 </div>
                 <div class="form-group col-md-6">
                   <label>سلك</label>
                   <input type = "text" class="form-control" id="search2" name="search2" list="list2"
-                 >
+                  required [(ngModel)]="selectedMissionnaire.classee">
                   <datalist id="list2">
                     <option *ngFor="let classe of classes" [value]="classe.liba" data-id="classe.code">
                   </datalist>
               </div>
                <div class="form-group col-md-6">
                   <label>المجموع</label>
-                  <input type="text" class="form-control" formControlName="groupe"  
+                  <input type="text" class="form-control" formControlName="groupe"  required
                   [(ngModel)]="selectedMissionnaire.groupe">
                 </div>
                 <div class="form-group col-md-6">
                   <label>مستوى التاجير</label>
-                  <input type="text" class="form-control" formControlName="niveau"  
+                  <input type="text" class="form-control" formControlName="niveau" required
                   [(ngModel)]="selectedMissionnaire.niveau">
                 </div>
               <div>

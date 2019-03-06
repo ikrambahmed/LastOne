@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class MissionService {
   readonly Url='http://localhost:8080/api/mission/ajout' ;
+  readonly url = 'http://localhost:8080/api/mission/getall' ; 
 missions : mission[];
   constructor(private http : HttpClient) { }
   
@@ -15,4 +16,6 @@ missions : mission[];
     console.log('el service') ; 
     return this.http.post(this.Url ,mission  ) ; 
   }
+ 
+
 }

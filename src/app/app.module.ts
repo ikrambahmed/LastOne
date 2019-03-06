@@ -26,7 +26,14 @@ import {StoreModule} from '@ngrx/store' ;
 import {principalReducer} from './shared/principal.reducer';
 import { MissionComponent } from './mission/mission.component' ; 
 import { MissionService } from './services/mission.service';
-import {BsDatepickerModule} from 'ngx-bootstrap/datepicker' ;
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+import { ListeMissionComponent } from './liste-mission/liste-mission.component' ;
+import {MatTableModule} from '@angular/material/table' ; 
+import {DataSource} from '@angular/cdk/table';
+import { CdkTableModule } from '@angular/cdk/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { OrdMissionnaireComponent } from './ord-missionnaire/ord-missionnaire.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +47,9 @@ import {BsDatepickerModule} from 'ngx-bootstrap/datepicker' ;
     ContentComponent,
     Login1Component,
     UserComponent,
-    MissionComponent
+    MissionComponent,
+    ListeMissionComponent,
+    OrdMissionnaireComponent
    ],
   imports: [
     Ng2SearchPipeModule,
@@ -49,10 +58,17 @@ import {BsDatepickerModule} from 'ngx-bootstrap/datepicker' ;
     FormsModule , 
     ReactiveFormsModule , 
     HttpClientModule ,
-    StoreModule.forRoot({principal:principalReducer}),
-    
+    StoreModule.forRoot({principal:principalReducer}) , 
+    MatTableModule , 
+    MatPaginatorModule , 
+    NgxPaginationModule
+
   
   ],
+  exports : [
+    MatTableModule , 
+    MatPaginator
+  ] , 
   providers: [AuthService,MissionnaireService,ListeMissionnaireService,MissionService, AppService, CookieService,
   {provide :HTTP_INTERCEPTORS, useClass :XHrInterceptor , multi : true }],
   bootstrap: [AppComponent]

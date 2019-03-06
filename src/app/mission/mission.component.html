@@ -1,75 +1,79 @@
+<html>
+  <body>
 <div class="container">
-  
-  <form [formGroup]="missionForm" #f="ngForm">
-  
-  <div class="jumbotron ">
-      
-    
-    <h1 style="color:rgb(7, 72, 116);"  >إدخال مأمورية </h1>
-  
 
-    <div  >
-        <input type="textbox1" class="class-form" formControlName="code_mission">
-        <input type="textbox" class="class-form" >
-        <label for="code">رقم المأمورية</label>
+  <form [formGroup]="missionForm" #f="ngForm">
+
+    <button class="btn btn-primary" data-toggle="collapse" data-target="#pannel">thel akahaw</button>
+
+    <div class="collapse" id="pannel">
+      <div class="panel panel-default">
+
+        <div class="panel-heading">
+
+          Le formulaire à remplir
         </div>
 
-  </div>
-  
+        <div>
+          <input type="textbox" id="champ1" />
+          <input type="textbox" id="champ2" />
+          <label for="code" class="font-weight-normal">رقم المأمورية</label>
+        </div>
 
-  
-  
-  
-  <div class="panel panel-primary">
-    <div class="panel-heading">
+        <div>
+          <label for="MotClé" class="font-weight-normal">الكلمة المفتاح</label>
+          <select class="form-control form-control-lg" id="select">
+            <option>Default select</option>
+          </select>
+        </div>
 
-     Le formulaire à remplir
+        <div>
+          <label for="ObjetA" class="font-weight-normal">موضوع المأمورية </label>
+
+          <textarea for="objeetA" class="class-form" formControlName="objetA">you are in the zone</textarea>
+        </div>
+
+        <div>
+          <label for="ObjetF" class="font-weight-normal"> Objet en Français </label>
+          <textarea for="objeetF" formControlName="objetF" class="class-form">you are in the zone</textarea>
+        </div>
+        <div>
+          <input type="text"  class="class-form" />
+
+          <label for="duree" class="font-weight-normal" style="width: 6rem;">المدة </label>
+
+
+          <input type="date" id="date1" class="class-form" formControlName="date_fin" />
+          <label for="retour" class="font-weight-normal">تاريخ الاياب </label>
+
+
+          <input type="date" id="date2" class="class-form" formControlName="date_debut" />
+          <label for="aller" class="font-weight-normal">تاريخ الذهاب </label>
+
+        </div>
+        <div>
+          <input button="submit" (click)="add()" class="btn" value="إدخال منتفعين بالمأمورية"
+            style="border:2px solid rgb(66, 26, 212);">
+        </div>
+      </div>
     </div>
-<div>
-    <label for="MotClé">محور المأمورية</label>
-      <input list="Mot Clé" id="motclé"  />
-      <datalist id="Mot Clé">
-      <option value="1">mot clé 1</option>
-      <option value="2">mot clé 2</option>
-      <option value="3">mot clé 3</option>
-      <option value="4">mot clé 4 </option>
-      
-      </datalist>
-</div>
+    <button class="btn btn-primary" data-toggle="collapse" data-target="#coll">+</button>
+    <div class="collapse" id="coll">houni yethal ktiba sans panel</div>
 
-<div >
-    <label for="ObjetA"> Objet Arabe </label>
-  
-    <textarea for="objeetA" class ="class-form" formControlName="objetA">you are in the zone</textarea>
-  </div>
-
-  <div >
-      <label for="ObjetF"> Objet en Français </label>
-      <textarea for="objeetF" formControlName="objetF" class ="class-form">you are in the zone</textarea>
-    </div>
-
-
-    <div >
-        <input type="text"  class ="class-form" />
-        <label for="duree">المدة </label>
-      
-
-        <input type="date" id="date1"  class ="class-form" formControlName="date_fin"/>
-        <label for="retour">تاريخ الاياب </label>
-
-        <input type="date" id="date2"  class ="class-form" formControlName="date_debut"/>
-        <label for="aller">تاريخ الذهاب </label>
-        
-  </div> 
-
-  </div>
-
-  <div>
-      <input button="submit" (click)="add()" class="btn btn-dark" value="إدخال" style="border:2px solid rgb(46, 46, 46);" >
-      <input type="button" class="btn btn-info btn-danger" value="إلغاء" style="border:2px solid rgb(233, 54, 54);">
-     
-      
-    </div> 
   </form>
 
 </div>
+
+<div class="container">
+
+    <button class="btn btn-primary" data-toggle="collapse" data-target="#pannel2">thel akahaw</button>
+
+    <div class="collapse" id="pannel2">
+     <app-ord-missionnaire></app-ord-missionnaire>
+    </div>
+   
+
+</div>
+</body>
+
+</html>

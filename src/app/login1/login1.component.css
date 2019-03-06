@@ -1,5 +1,9 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+body {font-family: Arial, Helvetica, sans-serif;
+    background-color:white;
+    }
 form {border: 3px solid #f1f1f1;}
+form{text-align:right;}
+
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -42,8 +46,11 @@ img.avatar {
 
 .container {
     padding: 16px;
+    position: relative ;
+    background-size: cover;
 }
-
+  
+  
 span.psw {
     float: right;
     padding-top: 16px;

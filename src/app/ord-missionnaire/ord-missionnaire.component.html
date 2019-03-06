@@ -1,0 +1,62 @@
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+    Ajout mte3 montafi3 
+    </div>
+    
+    <form [formGroup]="OrdMissForm" #f="ngForm">
+      
+    <div>
+      <label>CIN </label>
+      <input type="textbox" class="form-control" 
+      formControlName="cin" required
+      [(ngModel)]="cin" (click)="Search(cin)"> 
+    </div>
+
+    <div *ngIf="existe==true">
+      <div>
+        <label>NOM  </label>
+        <input type="textbox" class="form-control" 
+        formControlName="nom" required  [(ngModel)]="nom" > 
+      </div>
+      <div>
+          <label>Prenom </label>
+          <input type="textbox" class="form-control" 
+          formControlName="prenom" required  [(ngModel)]="prenom"> 
+        </div>
+
+        <div>
+            <label>Date_depart </label>
+            <input type="textbox" class="form-control" 
+            formControlName="Date_depart" required  [(ngModel)]="Date_depart"> 
+        </div>
+
+          
+        <div>
+              <label>Date_arrivee </label>
+              <input type="textbox" class="form-control" 
+              formControlName="Date_arrivee" required  [(ngModel)]="Date_arrivee"> 
+        </div>
+      </div>
+      <div *ngIf="existe==false">
+      
+          <div class="alert alert-danger" role="alert">
+              <h4 class="alert-heading">missionnaire n'existe pas </h4>
+              <p> le missionnaire n'existe pas , verifier le cin saisie </p>
+              <hr>
+              <p class="mb-0">voulez vous ajouter un missionnaire ? 
+                 <a [routerLink]="['/home']">Yes</a>                  
+              </p>
+            </div>
+            
+            
+
+      </div>
+
+    <div>
+      <input button="submit" (click)="Search(cin)" class="btn" value="إدخال منتفعين بالمأمورية"
+        style="border:2px solid rgb(66, 26, 212);">
+    </div>
+  </form>
+
+</div>

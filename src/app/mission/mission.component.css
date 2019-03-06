@@ -1,147 +1,156 @@
-h1 {
-    left: 50;
-    line-height: 200px;
-    margin: auto;
-    margin-top: -100px;
-    position: middle;
-    top: 50%;
-    width: 40%;
-   
-    font-weight: bold;
-   font:Arial;
-
-}
-.jumbotron{
-    position: relative;
-    
-}
 label[for=code]{
     position: absolute;
-    right:10%;
+    top: 15%;
+    right:7%;
+    font-size: 3ch;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+   
 
 }
-input[type=textbox1]{
+input[id=champ1]{
     position: absolute;
+    top : 15%;
     right:20%;
 }
-input[type=textbox]{
+input[id=champ2]{
     position: absolute;
-    right:35%;
+    top:15%;
+    right:35.75%;
 }
 .panel{
     position: relative;
-	padding-bottom: 10%;
-    background-color: rgb(232, 234, 236);
+	padding-bottom: 50%;
+    background-color: white;
     
 }
 
 
-input[list]
-{
-  margin-left:80;
-    
-
-  width: 60%;
-  left: 40%;
-    
-    background: rgb(255, 255, 255);
-    padding: 10px 10px 10px 10px;
-    font: 12px Arial, Helvetica, sans-serif;
-    color: rgb(177, 174, 174);
-    
-    
+select[id=select]{
+    position:absolute;
+    margin-left:40 ;
+  top : 30%;
+  height: 70px;
+  width: 50%;
+  left: 20%;
 }
 label[for=MotClé] {
     
     position: absolute;
-	
 	margin-top: 20px;
-	top: 50;
-    right: 0;
+	top:26%;
+    right: 7%;
     left: 30;
+    font-size: 3ch;
+    font-family: Arial, Helvetica, sans-serif;
+    
+   
     
   }
   label[for=ObjetA] {
     position: absolute;
-	
-	
-	top: 70;
-    right: 0;
+	top: 40%;
+    right: 7%;
     left: 30;
     margin-top: 20px;
+    font-size: 3ch;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+   
   }
 
   label[for=ObjetF] {
     position: absolute;
-	
 	padding-top: 20px;
-
-	top: 90;
-    right: 0;
-    left: 30;
+	top: 35%;
+    left: 1%;
     margin-top: 20px;
+    font-size: 2ch;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    
+   
   }
   textarea[for=objeetA]{
-      
-      width: 80%;
-      left: 30;
-      margin-top: 20px;
-      
-
+      position: absolute;
+      top:40%;
+      width: 30%;
+      left: 50%;
+      height: 100px;
+      margin-top: 10px;
 
   }
   textarea[for=objeetF]{
-    width: 80%;
-    left: 20;
-    margin-top: 20px;
+      position: absolute;
+      top : 40%;
+    width: 30%;
+    height: 100px;
+    left: 15%;
+    margin-top: 10px;
+    
     
 }
 label[for=aller]{
     position: absolute;
-	top: 120;
-    right: 10px;
+	top: 60%;
+    right: 7%;
     margin-top: 20px;
+    font-size: 3ch;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+   
 
 }
 
-input[button=submit]{
-    position: absolute;
-    right: 120px;
-    font-family: Impact,  'Arial Narrow Bold', sans-serif;
-}
 input[id=date2]{
     position: absolute;
-	top: 120;
-    right:80px;
+	top: 60%;
+    right:20%;
     margin-top: 20px;
     
 }
 label[for=retour]{
     position: absolute;
-	top: 120;
-    right:260px;
-
+	top: 60%;
+    right:40%;
     margin-top: 20px;
+    font-size: 3ch;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+   
 }
 input[id=date1]{
     position: absolute;
-	top: 120;
-    right:340px;
+	top: 60%;
+    right:50%;
     margin-top: 20px;
     
 }
 label[for=duree]{
     position: absolute;
-	top: 120;
-    left:200px;
+	top: 60%;
+    left:30%;
     margin-top: 20px;
+    font-size: 3ch;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+   
 
 }
 
 input[type=text]{
-   position : relative;
-    left: 20px;
+   position : absolute;
+   top: 60%;
+  
+    left: 10%;
     margin-top: 20px;
+    
 }
 
-     
+input[button=submit]
+{
+    position: absolute;
+    top:80%;
+    left: 5px;
+    font-family: Impact,  'Arial Narrow Bold', sans-serif;
+}
