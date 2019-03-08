@@ -10,6 +10,7 @@ import { UserComponent } from './user/user.component';
 import { MissionComponent } from './mission/mission.component';
 import { ListeMissionComponent } from './liste-mission/liste-mission.component';
 import { OrdMissionnaireComponent } from './ord-missionnaire/ord-missionnaire.component';
+import { ListaaComponent } from './listaa/listaa.component';
 
 const routes: Routes = [
  // {path : '' , redirectTo :'/home' , pathMatch:'full'},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'mission', component:MissionComponent},
   {path : 'liste-m', component:ListeMissionnaireComponent},
   {path:'missions', component:ListeMissionComponent} , 
-  {path : 'ord',component:OrdMissionnaireComponent}
+  {path : 'ord',component:OrdMissionnaireComponent},
+  {path:'lista', component:ListaaComponent}
 ];
 
 @NgModule({

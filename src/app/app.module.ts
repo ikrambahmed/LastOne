@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule  } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule , ReactiveFormsModule} from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
@@ -31,10 +31,11 @@ import { ListeMissionComponent } from './liste-mission/liste-mission.component' 
 import {MatTableModule} from '@angular/material/table' ; 
 import {DataSource} from '@angular/cdk/table';
 import { CdkTableModule } from '@angular/cdk/table';
-import { MatPaginator, MatPaginatorModule } from '@angular/material';
+import { MatPaginator, MatPaginatorModule, MatSortModule } from '@angular/material';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { OrdMissionnaireComponent } from './ord-missionnaire/ord-missionnaire.component';
-
+import { ListaaComponent } from './listaa/listaa.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations' ; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { OrdMissionnaireComponent } from './ord-missionnaire/ord-missionnaire.co
     UserComponent,
     MissionComponent,
     ListeMissionComponent,
-    OrdMissionnaireComponent
+    OrdMissionnaireComponent,
+    ListaaComponent
    ],
   imports: [
     Ng2SearchPipeModule,
@@ -61,7 +63,9 @@ import { OrdMissionnaireComponent } from './ord-missionnaire/ord-missionnaire.co
     StoreModule.forRoot({principal:principalReducer}) , 
     MatTableModule , 
     MatPaginatorModule , 
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatSortModule ,
+    BrowserAnimationsModule
 
   
   ],

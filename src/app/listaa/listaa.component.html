@@ -1,0 +1,32 @@
+<div class="mat-elevation-z8">
+    <mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="code_mission">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>code_mission </mat-header-cell>
+        <mat-cell *matCellDef="let mission"> {{mission.code_mission}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="objetA">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> objetA </mat-header-cell>>
+        <mat-cell *matCellDef="let mission"> {{mission.objetA}} </mat-cell>>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="objetF">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> objetF </mat-header-cell>
+        <mat-cell *matCellDef="let mission"> {{mission.objetF}} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="date_debut">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> date_debut </mat-header-cell>
+        <mat-cell *matCellDef="let mission"> {{mission.date_debut}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[10]" showFirstLastButtons></mat-paginator>
+
+    </div>
+  

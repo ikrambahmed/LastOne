@@ -34,6 +34,8 @@ butonMsg ;
     this.createForm() ; 
   
   }
+
+
   loadgrade()
   {this.missionnaireService.getGrade().subscribe(
     data => { this.grades=data;},
@@ -67,7 +69,18 @@ butonMsg ;
     error => {console.log(error); } , 
     () => {console.log('loading groupes was done ')}
   )}
-  createForm()
+ 
+  ngOnInit() {
+
+    this.loadgrade(); 
+    this.loadcateg(); 
+    this.loadclasse(); 
+    this.loadgroupe(); 
+    this.loadclasse(); 
+    this.loadfonction() ;
+    
+}
+ createForm()
   {
     this.missionnaireForm = this.fb.group({
       cin: ['',Validators.required],
@@ -86,26 +99,19 @@ butonMsg ;
       ministr: ['',Validators.required],
       rib: ['',Validators.required] , 
       groupe : ['',Validators.required],
-      graade : ['',Validators.required],
-      fonnction: ['',Validators.required],
-      classee: ['',Validators.required],
-      cat : ['',Validators.required],
+      grade : ['',Validators.required],
+      fonction: ['',Validators.required],
+      classe: ['',Validators.required],
+      cate : ['',Validators.required],
       //group: ['',Validators.required],
       //dept: ['',Validators.required]
   });
   }
-
-  ngOnInit() {
-
-    this.loadgrade(); 
-    this.loadcateg(); 
-    this.loadclasse(); 
-    this.loadgroupe(); 
-    this.loadclasse(); 
-    this.loadfonction() ;
-    
-}
-
+  initMiss()
+  { 
+    this.selectedMissionnaire= new missionnaire() ; 
+    this.createForm(); 
+  }
   update() {
   this.missionnaireService.updateMissionnaire(this.selectedMissionnaire)
   .subscribe(
@@ -129,6 +135,9 @@ butonMsg ;
     
   )}
 
+
+
+ 
   add(){
     console.log('nzel aala add') ; 
     const m = this.missionnaireForm.value ;
@@ -141,11 +150,5 @@ butonMsg ;
       }
     )
   }
-
-  initMiss()
-  { 
-    this.selectedMissionnaire= new missionnaire() ; 
-    this.createForm(); 
-  }
-
 }
+

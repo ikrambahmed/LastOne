@@ -3,6 +3,7 @@ import { FormGroup, FormArray, FormBuilder,Validators,ReactiveFormsModule  } fro
 import { MissionService } from '../services/mission.service';
 import { error } from '@angular/compiler/src/util';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker' ;
+import { mission } from '../models/mission';
 
 
 @Component({
@@ -11,13 +12,15 @@ import {BsDatepickerModule} from 'ngx-bootstrap/datepicker' ;
   styleUrls: ['./mission.component.css']
 })
 export class MissionComponent implements OnInit {
-
+mission: mission ; 
   missionForm:FormGroup;
+  date_debut:Date ; 
   constructor(private fb : FormBuilder , private missionService: MissionService) { 
     this.createForm() ; 
    }
 
   ngOnInit() {
+    this.mission=new mission() ; 
     
   }
 
@@ -40,7 +43,7 @@ export class MissionComponent implements OnInit {
     const m = this.missionForm.value ;
     this.missionService.addMission(m).subscribe(
       res => {
-        
+        this.mission=res ; 
           console.log("donne") ;   
          },
          error=>{console.log("ourourouuu");}    
