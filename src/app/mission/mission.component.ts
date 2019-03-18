@@ -15,12 +15,19 @@ export class MissionComponent implements OnInit {
 mission: mission ; 
   missionForm:FormGroup;
   date_debut:Date ; 
+  currentYea: number;
+  strr : String ; 
   constructor(private fb : FormBuilder , private missionService: MissionService) { 
     this.createForm() ; 
+    this.currentYea = (new Date()).getFullYear() ;
    }
 
   ngOnInit() {
     this.mission=new mission() ; 
+    
+    this.currentYea = (new Date()).getFullYear() ; 
+    this.strr=this.currentYea.toString() ;
+    
     
   }
 

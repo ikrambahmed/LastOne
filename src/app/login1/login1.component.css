@@ -3,7 +3,18 @@ body {font-family: Arial, Helvetica, sans-serif;
     }
 form {border: 3px solid #f1f1f1;}
 form{text-align:right;}
-
+.bg {
+    /* The image used */
+    background-image: url("/assets/background.jpg");
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
 input[type=text], input[type=password] {
     width: 100%;

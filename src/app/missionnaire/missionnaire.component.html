@@ -1,8 +1,10 @@
-<div class="container">
-<html >
+<div class="container-fluid">
+    <html >
   <head>
       <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
@@ -11,16 +13,14 @@
   <body> 
 <div *ngIf="operation == 'ADD' || operation =='EDIT' || operation =='REMOVE'">
 <div class="card-header bg-info text-white" >
-  <div class="card-header bg-info text-white" >
     {{operation == 'ADD' ? 'ادخال' :
       operation == 'EDIT' ? 'تغيير' :
       operation == 'REMOVE' ? 'جذف' : ''}}
 منتفع
 </div>
-</div>
 
 <div class="card-body"  >
-    <form [formGroup]="missionnaireForm" >
+    <form [formGroup]="missionnaireForm">
       <div class="form-group col-md-4" >
         <label> مكانها </label>
         <input type="text" class="form-control" formControlName="place_cin" 
@@ -66,65 +66,62 @@
           <input type="text" class="form-control" formControlName="prenomL"
           [(ngModel)]="selectedMissionnaire.prenomL" >
         </div>
+
         <div class="form-group col-md-6">
             <label>الاسم</label>
             <input type="text" class="form-control" formControlName="prenom" 
             [(ngModel)]="selectedMissionnaire.prenom" >
           </div>
+
         <div class="form-group col-md-6">
           <label> Nom </label>
           <input type="text" class="form-control" formControlName="nomL" 
           [(ngModel)]="selectedMissionnaire.nomL" >
         </div>
+
         <div class="form-group col-md-6">
           <label>اللقب  </label>
           <input type="text" class="form-control" formControlName="nom" 
           [(ngModel)]="selectedMissionnaire.nom" >
         </div>
+
             <div class="form-group col-md-6">
               <label>Nationalite </label>
               <input type="text" class="form-control" formControlName="nationaliteL"  
               [(ngModel)]="selectedMissionnaire.nationaliteL" > 
             </div>
+
             <div class="form-group col-md-6">
                 <label>الجنسية</label>
-                <input type="text" class="form-control" formControlName="nationalite"  
-                [(ngModel)]="selectedMissionnaire.nationalite" >
-              </div>
-         
-             <div class="form-group col-md-6">
-                  <label> الرتبة </label>
-                  <input type = "text" class="form-control" id="search3" name="search3" list="list3" 
-                  [(ngModel)]="selectedMissionnaire.graade" formControlName="grade" >
-                  <datalist id="list3">
-                    <option *ngFor="let grade of grades" [value]="grade" data-id="grade.code">
-                  </datalist>
+                <input type="text" class="form-control" formControlName="nationalite" [(ngModel)]="selectedMissionnaire.nationalite" >
               </div>
               
               <div class="form-group col-md-6">
+                <label> الرتبة </label>
+                <select class="form-control" formControlName="graade" [(ngModel)]="selectedMissionnaire.graade">
+                  <option *ngFor="let grade of grades" [ngValue]="grade">{{grade.liba}}</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
                 <label>الوظيفة</label>
-                <input type = "text" class = "form-control" id="search1" name="search1" list="list1"
-                 [(ngModel)]="selectedMissionnaire.fonnction" formControlName="fonction">
-                <datalist id="list1">
-                  <option *ngFor="let fonction of fonctions" [value]="fonction" data-id="fonction.code">
-                </datalist>
-            </div>
+                <select class="form-control" formControlName="fonnction" [(ngModel)]="selectedMissionnaire.fonnction">
+                  <option *ngFor="let fonction of fonctions" [ngValue]="fonction">{{fonction.liba}}</option>
+                </select>
+              </div>
             
               <div class="form-group col-md-6">
                   <label>صنف</label>
-                  <input type = "text" class="form-control" id="search4" name="search4" list="list4"
-                    [(ngModel)]="selectedMissionnaire.cat" formControlName="cate">
-                  <datalist id="list4">
-                    <option *ngFor="let categorie of categories" [value]="categorie" data-id="categorie.code">
-                  </datalist>
+                  <select class="form-control" formControlName="cat" [(ngModel)]="selectedMissionnaire.cat">
+                    <option *ngFor="let categorie of categories" [ngValue]="categorie">{{categorie.liba}}</option>
+                  </select>
                 </div>
+                
                 <div class="form-group col-md-6">
                   <label>سلك</label>
-                  <input type = "text" class="form-control" id="search2" name="search2" list="list2"
-                   [(ngModel)]="selectedMissionnaire.classee" formControlName="classe" >
-                  <datalist id="list2">
-                    <option *ngFor="let classe of classes" [value]="classe" data-id="classe.code"> 
-                  </datalist>
+                  <select class="form-control" formControlName="classee" [(ngModel)]="selectedMissionnaire.classee">
+                    <option *ngFor="let classe of classes" [ngValue]="classe">{{classe.liba}}</option>
+                  </select>
               </div>
                <div class="form-group col-md-6">
                   <label>المجموع</label>
@@ -136,7 +133,6 @@
                   <input type="text" class="form-control" formControlName="niveau" 
                   [(ngModel)]="selectedMissionnaire.niveau">
                 </div>
-               
               <div>
               <button class="btn btn-success"  
               (click)="operation == 'ADD' ? add() : operation=='EDIT'? update() : operation=='REMOVE'? remove() : '' ">
@@ -148,5 +144,4 @@
 </div>
 </body>
 </html>
-
 </div>

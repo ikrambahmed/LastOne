@@ -35,7 +35,9 @@ import { MatPaginator, MatPaginatorModule, MatSortModule } from '@angular/materi
 import {NgxPaginationModule} from 'ngx-pagination';
 import { OrdMissionnaireComponent } from './ord-missionnaire/ord-missionnaire.component';
 import { ListaaComponent } from './listaa/listaa.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations' ; 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BackgroundImageComponent } from './background-image/background-image.component';
+import { TestComponent } from './test/test.component' ; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations' ;
     MissionComponent,
     ListeMissionComponent,
     OrdMissionnaireComponent,
-    ListaaComponent
+    ListaaComponent,
+    BackgroundImageComponent,
+    TestComponent
    ],
   imports: [
     Ng2SearchPipeModule,

@@ -1,5 +1,8 @@
 export class grade {
-    constructor(public code? : String ,
-        public liba? : String , 
-        public libfr?  :String ) {} 
+   public code : String ; 
+   public liba : String ; 
+   public libfr : String ; 
+    constructor( code? : String ,
+         liba? : String , 
+     libfr?  :String ) {} 
 }

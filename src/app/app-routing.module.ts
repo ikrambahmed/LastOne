@@ -11,6 +11,8 @@ import { MissionComponent } from './mission/mission.component';
 import { ListeMissionComponent } from './liste-mission/liste-mission.component';
 import { OrdMissionnaireComponent } from './ord-missionnaire/ord-missionnaire.component';
 import { ListaaComponent } from './listaa/listaa.component';
+import { BackgroundImageComponent } from './background-image/background-image.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
  // {path : '' , redirectTo :'/home' , pathMatch:'full'},
@@ -24,7 +26,9 @@ const routes: Routes = [
   {path : 'liste-m', component:ListeMissionnaireComponent},
   {path:'missions', component:ListeMissionComponent} , 
   {path : 'ord',component:OrdMissionnaireComponent},
-  {path:'lista', component:ListaaComponent}
+  {path:'lista', component:ListaaComponent},
+  {path:'back', component:BackgroundImageComponent} , 
+  {path:'add', component:TestComponent}
 ];
 
 @NgModule({
